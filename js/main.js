@@ -3,7 +3,8 @@ const btn2 = document.getElementById('btn-2')
 const btn3 = document.getElementById('btn-3')
 const btn4 = document.getElementById('btn-4')
 const title = document.getElementsByClassName('main__title')[0]
-
+const mainBtns = document.getElementsByClassName('main__btn')[0]
+const resultadoDisplay = document.getElementsByClassName('resultado')[0]
 
 const listaGabarito = ['btn-1','btn-4','btn-2','btn-3']
 const listaPerguntas = ["da Inglaterra", "de Portugal","de Noruega "]
@@ -13,38 +14,50 @@ const listaOpcoes = [
     ["Madrí", "Caracas","Oslo",'Bogotá']]
 const listaBtns = [btn1,btn2,btn3,btn4]
 let c = 0
+let k = 0
+let gabarito = 0
+
 function renderConteudo(){
-    let str = "Capital " + listaPerguntas[0]
-    title.innerHTML = str
-    for(let i = 0; i < 4; ++i){
+   
+    if(k < 3){
+        let str = "Capital " + listaPerguntas[c]
+        title.innerHTML = str
+        for(let i = 0; i < 4; ++i){
         listaBtns[i].innerHTML = listaOpcoes[c][i]
+        }
+        ++c;
     }
-    ++c;
-    listaPerguntas.shift()
-    listaGabarito.shift()
+    else{
+        title.textContent = 'Resultado:'
+        mainBtns.style.display= 'none'
+        resultadoDisplay.classList.remove('none')
+        resultadoDisplay.textContent =  gabarito
+    }
+    ++k;
 }
 btn1.addEventListener('click',()=>{
-    if(btn1.id == listaGabarito[0]){
+    if(btn1.id == listaGabarito[k]){
         console.log(listaGabarito)
-        renderConteudo()
-    }
+       ++gabarito;
+    } 
+    renderConteudo()
 })
 
 btn2.addEventListener('click',()=>{
-    if(btn2.id == listaGabarito[0]){
-        console.log('acertou')
-        renderConteudo()
+    if(btn2.id == listaGabarito[k]){
+        console.log(k)
     }
+    renderConteudo()
 })
 btn3.addEventListener('click',()=>{
-    if(btn3.id == listaGabarito[0]){
-    console.log('acertou')
-    renderConteudo()
+    if(btn3.id == listaGabarito[k]){
+       ++gabarito;
     }
+    renderConteudo()
 })
 btn4.addEventListener('click',()=>{
-    if(btn4.id == listaGabarito[0]){
-        renderConteudo()
-    console.log('acertou')
+    if(btn4.id == listaGabarito[k]){
+       ++gabarito;
     }
+    renderConteudo()
 })

@@ -20,6 +20,7 @@ body{
     height: 400px;
     border-radius: 15px;
 
+
 }
 .main__title{
     margin-top: 30px;
@@ -47,6 +48,21 @@ body{
     margin: 5px 0 5px 0;
 }
 .btn-stl:hover{
-    background-color: rgba(0, 0, 0, 0.426);
+    background-color: rgba(12, 65, 129, 0.749);
     color: white;
+}
+.resultado{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgb(92, 251, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: white;
+    margin: auto;
+}
+.none{
+    display: none;
 }
