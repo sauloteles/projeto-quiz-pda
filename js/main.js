@@ -18,7 +18,6 @@ let k = 0
 let gabarito = 0
 
 function renderConteudo(){
-   
     if(k < 3){
         let str = "Capital " + listaPerguntas[c]
         title.innerHTML = str
@@ -28,7 +27,7 @@ function renderConteudo(){
         ++c;
     }
     else{
-        title.textContent = 'Resultado:'
+        title.textContent = 'Acertos:'
         mainBtns.style.display= 'none'
         resultadoDisplay.classList.remove('none')
         resultadoDisplay.textContent =  gabarito
@@ -37,7 +36,6 @@ function renderConteudo(){
 }
 btn1.addEventListener('click',()=>{
     if(btn1.id == listaGabarito[k]){
-        console.log(listaGabarito)
        ++gabarito;
     } 
     renderConteudo()
@@ -45,7 +43,8 @@ btn1.addEventListener('click',()=>{
 
 btn2.addEventListener('click',()=>{
     if(btn2.id == listaGabarito[k]){
-        console.log(k)
+       ++gabarito;
+
     }
     renderConteudo()
 })
@@ -57,6 +56,7 @@ btn3.addEventListener('click',()=>{
 })
 btn4.addEventListener('click',()=>{
     if(btn4.id == listaGabarito[k]){
+        console.log(listaGabarito[k])
        ++gabarito;
     }
     renderConteudo()
