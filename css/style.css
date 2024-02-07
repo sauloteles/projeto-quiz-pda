@@ -40,7 +40,6 @@ body{
 
 .btn-stl{
     background-color: white;
-
     width: 100%;
     border: none;
     height: 55px;
@@ -49,6 +48,7 @@ body{
 }
 .btn-stl:hover{
     background-color: rgba(12, 65, 129, 0.749);
+    border: 2px solid rgba(0, 0, 0, 0.5);
     color: white;
 }
 .resultado{
